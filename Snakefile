@@ -58,7 +58,7 @@ rule summarize_dly_files:
         bash_script = "code/concatenate_dly.bash",
         r_script = "code/read_split_dly_files.R",
         tarball = "data/ghcnd_all.tar.gz"
-    output:
+    output: 
         "data/ghcnd_tidy.tsv.gz"
     shell:
         """
