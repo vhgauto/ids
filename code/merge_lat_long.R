@@ -51,11 +51,3 @@ read_fwf("data/ghcnd-stations.txt",
   group_by(latitude, longitude) %>% 
   mutate(region = cur_group_id()) %>% 
   write_tsv("data/ghcnd_regions.tsv")
-
-
-
-
-
-
-
-         
