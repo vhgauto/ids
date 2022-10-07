@@ -17,10 +17,13 @@ lat_long_prcp <- inner_join(prcp_data, station_data, by = "id") %>%
   # remuevo años inicial y final, excepto 2022
   filter((year != first_year & year != last_year) | year == 2022) %>% 
   group_by(latitude, longitude, year) %>% 
-  summarise(mean_prcp = mean(prcp)) %>% 
-  summarise(n = n())
+  summarise(mean_prcp = mean(prcp)) # %>% 
+  # summarise(n = n())
 
-lat_long_prcp %>% 
-  ggplot(aes(x = n)) +
-  geom_histogram() +
-  theme_classic()
+# lat_long_prcp %>% 
+#   ggplot(aes(x = n)) +
+#   geom_histogram() +
+#   theme_classic()
+# 
+# lat_long_prcp %>% 
+#   filter(n >= 100)
