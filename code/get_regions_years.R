@@ -50,4 +50,4 @@ read_fwf("data/ghcnd-stations.txt",
                 longitud = round(longitude, 0)) %>% 
   group_by(latitude, longitude) %>% 
   mutate(region = cur_group_id()) %>% 
-  write_tsv("data/ghcnd_regions.tsv")
+  write_tsv("data/ghcnd_regions_years.tsv")

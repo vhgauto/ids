@@ -109,26 +109,27 @@ process_xfiles <- function(x) {
     # extraer el contenido de 120 archivos lleva ~ 20 segundos
     # cambio los nombres de las columnas (todo a minúscula)
     rename_with(.cols = everything(), .fn = tolower) %>% 
-    # sólo me interesan los datos de precipitación fff
-    # filter(element == "PRCP") %>% 
-    # quito la columna 'element'
-    # select(-element) %>% 
+    # sólo me interesan los datos de precipitación 
     # tabla larga
     pivot_longer(cols = starts_with("value"),
                  names_to = "day",
                  values_to = "prcp") %>% 
     # quito los NA, porque se crearon filas p/el 29/02, 30/02, 31/02
-    drop_na() %>% 
+    # drop_na() %>% 
     # quito los días sin precipitaciones
-    filter(prcp != 0) %>% 
+    # filter(prcp != 0) %>% 
     # modifico 'day' para que solo contenga números
     mutate(day = str_replace(string = day, pattern = "value", replacement = "")) %>% 
     # creo la columna 'date'
-    mutate(date = ymd(glue("{year}-{month}-{day}"))) %>% 
+    mutate(date = ymd(glue("{year}-{month}-{day}"), quiet = TRUE)) %>% 
+    # convierto los NA
+    mutate(prcp = replace_na(prcp, replace = "0")) %>% 
     # convierto 'prcp' a número
     mutate(prcp = as.numeric(prcp)) %>% 
     # 'prcp' está en decenas de milímetros (de acuerdo al README), lo paso a cm
     mutate(prcp = prcp/100) %>% 
+    # remuevo fechas erróneas
+    drop_na(date) %>% 
     # elijo las columnas 
     select(id, date, prcp) %>% 
     # defino la ventana de análsis
