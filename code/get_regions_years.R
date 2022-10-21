@@ -4,7 +4,7 @@
 
 library(tidyverse)
 
-setwd("//wsl.localhost/Ubuntu/home/victor/ids")
+# setwd("//wsl.localhost/Ubuntu/home/victor/ids")
 
 # reviso el README
 # browseURL("https://www.ncei.noaa.gov/pub/data/ghcn/daily/readme.txt")

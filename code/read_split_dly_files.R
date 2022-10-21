@@ -6,7 +6,7 @@ library(tidyverse)
 library(glue)
 library(lubridate)
 
-setwd("\\\\wsl.localhost/Ubuntu/home/victor/ids")
+# setwd("\\\\wsl.localhost/Ubuntu/home/victor/ids")
 
 # leo los archivos .dly
 # read_tsv("data/ghcnd_all/AGM00060670.dly") # NO funciona

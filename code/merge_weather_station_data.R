@@ -4,7 +4,7 @@
 
 library(tidyverse)
 
-setwd("//wsl.localhost/Ubuntu/home/victor/ids")
+# setwd("//wsl.localhost/Ubuntu/home/victor/ids")
 
 prcp_data <- read_tsv(file = "data/ghcnd_tidy.tsv.gz")
 
