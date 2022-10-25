@@ -37,4 +37,4 @@ read_fwf("data/ghcnd-inventory.txt",
   group_by(latitude, longitude) %>% 
   mutate(region = cur_group_id()) %>% 
   select(-element) %>% 
-  write_tsv("data/ghcnd_regions_years.tsv")
+  write_tsv("data/ghcnd_regions_years.tsv") 
