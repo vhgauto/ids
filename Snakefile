@@ -97,7 +97,9 @@ rule render_index:
         png = "visuals/world_ids.png"
     output:
         "index.html"
+    conda:
+        "environment.yml"
     shell:
         """
-        R -e "library(rmarkdown); render('{input.rmd}')
+        R -e "library(rmarkdown); render('{input.rmd}')"
         """
