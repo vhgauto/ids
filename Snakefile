@@ -99,5 +99,5 @@ rule render_index:
         "index.html"
     shell:
         """
-        R -e "librarry(rmarkdown); render('{input.rmd}')
+        R -e "library(rmarkdown); render('{input.rmd}')
         """
