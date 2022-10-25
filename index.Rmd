@@ -1,0 +1,9 @@
+---
+title: Índice de sequía
+author: Víctor Gauto
+output: html_document
+email_address: victor.gauto@outlook.com
+github_repo: https://vhgauto.github.io/ids/
+---
+
+![](visuals/world_ids.png)
