@@ -6,7 +6,8 @@ rule targets:
         "data/ghcnd-stations.txt",
         "data/ghcnd_tidy.tsv.gz",
         "data/ghcnd_regions_years.tsv",
-        "visuals/world_ids.png"
+        "visuals/world_ids.png",
+        "index.html"
 
 rule get_all_archive:
     input:
@@ -88,4 +89,15 @@ rule plot_ids_by_region:
     shell:
         """
         {input.r_script}
+        """
+
+rule render_index:
+    input:
+        rmd = "index.Rmd",
+        png = "visuals/world_ids.png"
+    output:
+        "index.html"
+    shell:
+        """
+        R -e "librarry(rmarkdown); render('{input.rmd}')
         """
