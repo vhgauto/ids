@@ -3,6 +3,7 @@ title: Índice de sequía
 author: Víctor Gauto    
 output: html_document
 embed-resources: true
+page-layout: full
 email_address: victor.gauto@outlook.com
 github_repo: https://github.com/vhgauto/ids
 ---
@@ -12,7 +13,7 @@ library(lubridate)
 ```
 
 ```{css echo = FALSE}
-.author, .title {
+.Author, .title {
     display: none;
 }
 
@@ -28,7 +29,7 @@ body {
 
 ```
 
-![](visuals/world_ids.png)
+![](visuals/world_ids.png){width=1000%}
 
 Última actualización realizada el `r today()`  
 Sitio web [desarrollado](`r rmarkdown::metadata$github_repo`) por [Víctor Gauto](mailto:`r rmarkdown::metadata$email_address`)
