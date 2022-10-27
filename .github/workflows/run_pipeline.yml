@@ -23,6 +23,6 @@ jobs:
         uses: snakemake/snakemake-github-action@v1
         with:
           directory: '.'
-          snakefile: '.Snakefile'
+          snakefile: 'Snakefile'
           args: '--cores 1 --use-conda --conda-cleanup-pkgs cache'
           stagein: '' # additional preliminary commands to run (can be multiline)
