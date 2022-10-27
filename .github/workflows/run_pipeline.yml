@@ -1,5 +1,5 @@
 name: Ejecuto Proyecto Índice de Sequía
-run-name: ${{ github.actor }} está verificando GitHub Actions 🚀
+run-name: ${{ github.actor }} está corriendo snakemake 🐍
 on: [push]
 jobs:
   Ejecuto-Proyecto-Indice-de-Sequia:
