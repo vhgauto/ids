@@ -3,4 +3,4 @@ Proyecto para practicar reproducibilidad a través del estudio de sequía mundia
 
 Todo lo aquí expuesto surge del seguimiento de los videos tutoriales a cargo del [Dr. Pat Schloss](https://github.com/riffomonas).
 
-https://www.youtube.com/playlist?list=PLmNrK_nkqBpK6iqwN3QeQyXqI6DrcGgIm
+[Lista de reproducción](https://www.youtube.com/playlist?list=PLmNrK_nkqBpK6iqwN3QeQyXqI6DrcGgIm)
