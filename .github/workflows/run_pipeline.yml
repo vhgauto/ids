@@ -1,6 +1,8 @@
 name: Ejecuto Proyecto Índice de Sequía
 run-name: ${{ github.actor }} está corriendo snakemake 🐍
-on: [push]
+on: 
+  schedule:
+  - cron: '0 20 * * *'
 jobs:
   Ejecuto-Proyecto-Indice-de-Sequia:
     runs-on: ubuntu-latest
