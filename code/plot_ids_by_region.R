@@ -5,6 +5,13 @@
 library(tidyverse)
 library(glue)
 library(lubridate)
+library(showtext)
+
+# fuentes
+font_add_google(name = "Merriweather", family = "merriweather")
+font_add_google(name = "Lato", family = "lato")
+showtext_auto()
+showtext_opts(dpi = 300)
 
 prcp_data <- read_tsv(file = "data/ghcnd_tidy.tsv.gz")
 
@@ -49,19 +56,23 @@ lat_long_prcp %>%
   # theme_bw() +
   theme(
     plot.background = element_rect(fill = "black", color = "black"),
-    plot.title = element_text(color = "#f5f5f5", size = 15),
-    plot.subtitle = element_text(color = "#f5f5f5"),
-    plot.caption = element_text(color = "#f5f5f5"),
+    plot.title = element_text(color = "#f5f5f5", size = 17,
+                              family = "merriweather"),
+    plot.subtitle = element_text(color = "#f5f5f5", size = 12,
+                                 family = "lato"),
+    plot.caption = element_text(color = "#f5f5f5", size = 9,
+                                family = "lato"),
     panel.background = element_rect(fill = "black"),
     panel.grid = element_blank(),
     legend.background = element_blank(),
     legend.position = c(.1, 0.05),
     legend.direction = "horizontal",
     legend.key.height = unit(.5, "line"),
-    legend.text = element_text(color = "#f5f5f5", size = 8),
+    legend.text = element_text(color = "#f5f5f5", size = 7,
+                               family = "lato"),
     axis.text = element_blank()
   )
-  
+
 ggsave(filename = "visuals/world_ids.png",
       plot = last_plot(),
       height = 10,

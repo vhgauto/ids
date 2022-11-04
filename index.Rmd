@@ -6,6 +6,9 @@ email_address: victor.gauto@outlook.com
 github_repo: https://github.com/vhgauto/ids
 ---
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 
 ```{r setup, include=FALSE} 
 knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
@@ -28,6 +31,7 @@ body {
     background-color: black;
     color: #f5f5f5;
     font-size: 1.2vw;
+    font-family: "Lato", sans-serif;
 }
 
 ```
