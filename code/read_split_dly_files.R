@@ -53,7 +53,7 @@ library(lubridate)
 # fwf: fixed width file
 
 # día actual juliano
-tday_julian <- yday(today())
+tday_julian <- yday(today() - 5) # considero un buffer de 5 días
 
 # ventana de días a cosiderar
 window <- 30
