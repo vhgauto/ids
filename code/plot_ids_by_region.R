@@ -48,6 +48,15 @@ fin <- case_when(
 
 rango_fecha <- glue("{inicio} al {fin}"); rango_fecha
 
+# mapa del mundo (p/que esté de referencia en el fondo)
+mundo <- map_data("world") |>
+  # remuevo la Antártida, que no tiene datos
+  filter(region != "Antarctica") # |>
+  # redondeo log y lat, porque geom_tile del IDS está pixelado 
+  # mutate(long = round(long),
+  #        lat = round(lat))
+
+# IDS
 gg_ids <- lat_long_prcp %>% 
   group_by(latitude, longitude) %>% 
   mutate(# z-score
@@ -64,6 +73,9 @@ gg_ids <- lat_long_prcp %>%
                              z_score < -2 ~ -2,
                              TRUE ~ z_score)) %>%
   ggplot(aes(x = longitude, y = latitude, fill = z_score)) +
+  geom_map(data = mundo, aes(map_id = region), map = mundo,
+           fill = NA, color = "#f5f5f5", inherit.aes = FALSE, size = .075) +
+  expand_limits(x = mundo$long, y = mundo$lat) +
   geom_tile() +
   # obtengo una paleta de colores de: 
   scale_fill_gradient2(low = "#d8b365", mid = "#f5f5f5", high = "#5ab4ac",
